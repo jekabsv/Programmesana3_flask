@@ -23,3 +23,8 @@ def receive_sensor_data():
     mycursor.execute(sql, (json_string,))
     mydb.commit()
     print(data)
+
+    return jsonify({
+    "status": "success",
+    "received": data
+    }), 200
