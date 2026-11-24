@@ -4,6 +4,8 @@ import json
 
 app = Flask(__name__)
 
+sql = "INSERT INTO _data (__data) VALUES (%s)"
+
 @app.route('/sensor/data', methods=['POST'])
 def receive_sensor_data():
     mydb = mysql.connector.connect(
@@ -18,7 +20,6 @@ def receive_sensor_data():
     data = request.get_json()
     json_string = json.dumps(data)
     
-    sql = "INSERT INTO _data (__data) VALUES (%s)"
     mycursor.execute(sql, (json_string,))
     mydb.commit()
     
