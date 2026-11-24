@@ -7,7 +7,7 @@ mydb = mysql.connector.connect(
   user="root",
   password="root",
   database="jacobsDB",
-  port=3307
+  port=3306
 )
 
 mycursor = mydb.cursor()
