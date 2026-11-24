@@ -27,6 +27,8 @@ def receive_sensor_data():
     mydb.close()
     
     print(data)
+    app.logger.info(f"Received sensor data: {data}")
+
 
     return jsonify({
         "status": "success",
