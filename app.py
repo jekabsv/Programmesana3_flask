@@ -3,7 +3,7 @@ import mysql.connector
 import json
 
 mydb = mysql.connector.connect(
-  host="localhost",
+  host="database",
   user="root",
   password="root",
   database="jacobsDB",
